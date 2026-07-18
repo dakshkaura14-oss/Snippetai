@@ -12,8 +12,8 @@ DRDO_Project/
 │
 ├── inference/
 │   ├── inference.py
-│   ├── app.py
-│   └── requirements.txt
+│   ├── text.py
+│   
 │
 ├── frontend/
 │
