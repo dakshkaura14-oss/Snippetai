@@ -1,0 +1,28 @@
+```txt
+# Core ML
+torch
+transformers
+accelerate
+sentencepiece
+
+# API Backend
+fastapi
+uvicorn
+
+# LangChain
+langchain
+langchain-core
+langchain-community
+langchain-ollama
+
+# Utilities
+pydantic
+python-dotenv
+requests
+
+# Optional (only if you use datasets)
+datasets
+
+# Optional (if using LoRA/PEFT)
+peft
+```

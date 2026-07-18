@@ -1,0 +1,76 @@
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment Variables
+.env
+
+# Logs
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# ==========================
+# Models (Do NOT upload)
+# ==========================
+Qwen_Merged/
+*.gguf
+*.ggml
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+
+# ==========================
+# Training Outputs
+# ==========================
+outputs/
+checkpoints/
+runs/
+results/
+
+# ==========================
+# Hugging Face Cache
+# ==========================
+.cache/
+huggingface/
+
+# ==========================
+# Temporary Files
+# ==========================
+temp/
+tmp/
+*.tmp
+
+# ==========================
+# Build Files
+# ==========================
+build/
+dist/
+*.egg-info/
+
+# ==========================
+# Node (if using React/Next.js)
+# ==========================
+node_modules/
+.next/
+out/
