@@ -1,4 +1,3 @@
-````markdown
 # SnippetAI
 
 SnippetAI is a fine-tuned Qwen-based language model designed for generating and explaining programming snippets. This repository contains the training, inference, and deployment code for the project.
@@ -9,7 +8,6 @@ SnippetAI is a fine-tuned Qwen-based language model designed for generating and 
 
 ## Project Structure
 
-```text
 DRDO_Project/
 │
 ├── inference/
@@ -23,7 +21,6 @@ DRDO_Project/
 ├── README.md
 ├── .gitignore
 └── Qwen_Merged/          <-- Place the merged Hugging Face model here
-```
 
 ---
 
@@ -37,18 +34,17 @@ DRDO_Project/
 
 Install the Python dependencies:
 
-```bash
+bash
 pip install -r requirements.txt
-```
 
 ---
 
 # Step 1 - Clone the Repository
 
-```bash
+bash
 git clone <repository-url>
 cd DRDO_Project
-```
+
 
 ---
 
@@ -56,30 +52,29 @@ cd DRDO_Project
 
 Copy your merged Hugging Face model into:
 
-```text
+text
 DRDO_Project/
 └── Qwen_Merged/
-```
 
 The directory should contain files such as:
 
-```text
+text
 config.json
 generation_config.json
 model.safetensors
 tokenizer.json
 tokenizer_config.json
 special_tokens_map.json
-```
+
 
 ---
 
 # Step 3 - Clone llama.cpp
 
-```bash
+bash
 git clone https://github.com/ggml-org/llama.cpp
 cd llama.cpp
-```
+
 
 Build llama.cpp according to your operating system.
 
@@ -89,15 +84,15 @@ Build llama.cpp according to your operating system.
 
 Run the conversion script:
 
-```bash
+bash
 python convert_hf_to_gguf.py ../Qwen_Merged --outfile snippetai.gguf
-```
+
 
 After conversion you should have:
 
-```text
+text
 snippetai.gguf
-```
+
 
 Move or copy the file into your project directory if desired.
 
@@ -107,9 +102,9 @@ Move or copy the file into your project directory if desired.
 
 Verify the installation:
 
-```bash
+bash
 ollama --version
-```
+
 
 ---
 
@@ -119,7 +114,7 @@ Create a file named `Modelfile`.
 
 Example:
 
-```text
+text
 FROM ./snippetai.gguf
 
 PARAMETER temperature 0.7
@@ -129,7 +124,7 @@ SYSTEM """
 You are SnippetAI, an AI assistant specialized in programming and code generation.
 Provide clear, accurate, and concise answers.
 """
-```
+
 
 ---
 
@@ -137,47 +132,44 @@ Provide clear, accurate, and concise answers.
 
 Run:
 
-```bash
+bash
 ollama create snippetai -f Modelfile
-```
 
 If successful, the model will be registered with Ollama.
 
 Verify:
 
-```bash
+bash
 ollama list
-```
+
 
 ---
 
 # Step 8 - Run the Model
 
-```bash
+bash
 ollama run snippetai
-```
+
 
 Example:
 
-```text
+text
 >>> Explain binary search using Python.
-```
+
 
 ---
 
 # Step 9 - Run the Python Inference Script
 
-```bash
+bash
 cd inference
 
 python inference.py
-```
 
 or
 
-```bash
-python app.py
-```
+bash
+python test.py
 
 depending on your project structure.
 
@@ -185,9 +177,9 @@ depending on your project structure.
 
 # Example Prompt
 
-```text
+text
 Write a Python function to reverse a linked list.
-```
+
 
 ---
 
@@ -195,15 +187,15 @@ Write a Python function to reverse a linked list.
 
 ## Model not found
 
-```bash
+bash
 ollama list
-```
+
 
 If the model is missing:
 
-```bash
+bash
 ollama create snippetai -f Modelfile
-```
+
 
 ---
 
@@ -211,9 +203,9 @@ ollama create snippetai -f Modelfile
 
 Ensure:
 
-```text
+text
 snippetai.gguf
-```
+
 
 exists in the same directory as the `Modelfile`.
 
@@ -223,10 +215,10 @@ exists in the same directory as the `Modelfile`.
 
 Verify PyTorch:
 
-```python
+python
 import torch
 print(torch.cuda.is_available())
-```
+
 
 ---
 
