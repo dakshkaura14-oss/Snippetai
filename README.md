@@ -12,7 +12,7 @@ SnippetAI/
 │
 ├── inference/
 │   ├── inference.py
-│   ├── text.py
+│   ├── test.py
 │   
 │
 ├── frontend/
