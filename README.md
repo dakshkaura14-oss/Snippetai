@@ -8,7 +8,7 @@ SnippetAI is a fine-tuned Qwen-based language model designed for generating and 
 
 ## Project Structure
 
-DRDO_Project/
+SnippetAI/
 │
 ├── inference/
 │   ├── inference.py
@@ -43,7 +43,7 @@ pip install -r requirements.txt
 
 bash
 git clone <repository-url>
-cd DRDO_Project
+cd SnippetAI
 
 
 ---
@@ -53,7 +53,7 @@ cd DRDO_Project
 Copy your merged Hugging Face model into:
 
 text
-DRDO_Project/
+SnippetAI/
 └── Qwen_Merged/
 
 The directory should contain files such as:
